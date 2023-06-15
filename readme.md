@@ -142,7 +142,7 @@ Checksum(MD5): ce8e7e5ab26ab5a7db6b7d30759cf02e
     $ md5sum ./exchange/test2.txt
     ce8e7e5ab26ab5a7db6b7d30759cf02e  ./exchange/test2.txt
 ``` 
-
+---
 # Order Book Coding Assignment
 
 An exchange allows the buyers and sellers of a product to discover each other and trade. Buyers and sellers (traders)
@@ -160,6 +160,7 @@ book.
 Once this is completed, any remaining order quantity will rest on their own side of the book.
 Consider 3 orders
 have been submitted to the exchange, in the following order:	
+
 ● Buy 1000 @ 99
 
 ● Buy 1200 @ 98
@@ -189,15 +190,19 @@ existing resting orders:
 | 500           | 99            |                |                |
 | 1200          | 98            |                |                |
 
-A **Sell** order is now submitted that is aggressively-priced: ● Sell 2000 @ 95
+A **Sell** order is now submitted that is aggressively-priced: 
+
+● Sell 2000 @ 95
 
 This triggers a matching event as there are orders on the **Buy** side that match with the new **Sell** order.
 
 The orders are matched in price time priority (first by price, then by arrival time into the book) i.e.		
-`    `● Buy 1000 @ 99 is matched first (as it is the oldest order at the highest price level)
-`    `● Buy 500 @ 99 is matched second (as it is at the highest price level and arrived after the BUY 1000 @ 99 order)
-`    `● Buy 500 @ 98 is matched third (as it is at a lower price. This partially fills the resting order of 1200,
-leaving 700 in the order book)
+
+`    ● Buy 1000 @ 99 is matched first (as it is the oldest order at the highest price level)`
+
+`    ● Buy 500 @ 99 is matched second (as it is at the highest price level and arrived after the BUY 1000 @ 99 order)`
+
+`    ● Buy 500 @ 98 is matched third (as it is at a lower price. This partially fills the resting order of 1200, leaving 700 in the order book)`
 
 | Bids (Buying) | Bids (Buying) | Asks (Selling) | Asks (Selling) |
 |---------------|---------------|----------------|----------------|
